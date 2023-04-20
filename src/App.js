@@ -1,18 +1,14 @@
-
-import './App.css';
-import Map from "./components/Map";
+import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Gym from "./components/Gym";
+import RestaurantList from "./components/RestaurantList";
 function App() {
+  const center = { lat: 23.7937, lng: 90.4066 };
+
   return (
-    <div className="App">
-      <h1 className="text-red-500">Tailwind test</h1>
-      <Router>
-        <Routes>
-          <Route path="/" exact element={<Map />} />
-          <Route path="/gym/:gymId" exact element={<Gym />} />
-        </Routes>
-      </Router>
+    <div>
+      <h1>Restaurants</h1>
+
+      <RestaurantList center={center} />
     </div>
   );
 }
