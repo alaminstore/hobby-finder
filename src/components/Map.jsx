@@ -13,6 +13,8 @@ const Map = () => {
   const [isSearchEnable, setIsSearchEnable] = useState(null);
   const [distance, setDistance] = useState(40);
   const [resetAll, setResetAll] = useState(false);
+  const [searchLatLng, setSearchLatLng] = useState(null);
+  const [center, setCenter] = useState(null);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function (position) {
@@ -23,6 +25,11 @@ const Map = () => {
       setHobbies(hobbyData);
     });
   }, []);
+
+  useEffect(() => {
+    setCenter(searchLatLng);
+    console.log("helloj", searchLatLng);
+  }, [searchLatLng]);
 
   useEffect(() => {
     handleSearch();
@@ -86,6 +93,7 @@ const Map = () => {
         isSeach={setIsSearchEnable}
         coverage={coverage}
         reset={handleReset}
+        newSearchLatLng={setSearchLatLng}
       />
       {hobbyType}
       {location.latitude && (
@@ -99,10 +107,11 @@ const Map = () => {
               lat: location?.latitude,
               lng: location?.longitude,
             }}
-            center={{
-              lat: 25.168282,
-              lng: 55.250286,
-            }}
+            center={center}
+            // center={{
+            //   lat: 25.168282,
+            //   lng: 55.250286,
+            // }}
             // center={{
             //   lat: location?.latitude,
             //   lng: location?.longitude,
