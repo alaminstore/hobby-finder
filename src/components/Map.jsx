@@ -79,7 +79,7 @@ const Map = () => {
   const handleSearch = () => {
     let filterData = hobbyData.filter(
       (hobby) =>
-        hobby?.name?.toLowerCase().includes(hobbyType?.toLowerCase()) &&
+        hobby?.type?.toLowerCase().includes(hobbyType?.toLowerCase()) &&
         // getDistanceFromLatLonInKm()
         getDistanceFromLatLonInKm(
           searchLatLng?.lat,

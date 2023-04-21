@@ -2,10 +2,11 @@ const hobbyData = [
   {
     id: 1,
     name: "NYC Food & Wine Festival",
+    type: "cooking event",
     description:
       "Join us for a week of culinary events featuring world-renowned chefs and wineries from around the globe.",
-    latitude: 40.7421,
-    longitude: -74.0041,
+    latitude: 40.8869,
+    longitude: 73.8762,
     image:
       "https://cdn.evbstatic.com/s3-build/fe/build/images/7b607e2249addb0ff1e96fb5db7d959f-food.jpg",
   },
@@ -13,6 +14,7 @@ const hobbyData = [
   {
     id: 2,
     name: "Taste of the Upper West Side",
+    type: "cooking event",
     description:
       "Sample food and wine from the Upper West Side's top restaurants and chefs.",
     latitude: 40.787,
@@ -24,6 +26,7 @@ const hobbyData = [
   {
     id: 3,
     name: "New York City Wine & Food Festival",
+    type: "cooking event",
     description:
       "Experience the best food and wine the city has to offer, with proceeds benefiting No Kid Hungry.",
     latitude: 40.7736,
@@ -35,6 +38,7 @@ const hobbyData = [
   {
     id: 4,
     name: "The Great GoogaMooga",
+    type: "cooking event",
     description:
       "A food and music festival featuring some of the best restaurants and chefs in the city.",
     latitude: 40.6689,
@@ -46,6 +50,7 @@ const hobbyData = [
   {
     id: 5,
     name: "New York Pizza Festival",
+    type: "cooking event",
     description:
       "Try a variety of pizzas from some of the city's best pizzerias.",
     latitude: 40.7589,
@@ -57,6 +62,7 @@ const hobbyData = [
   {
     id: 6,
     name: "Harlem EatUp!",
+    type: "cooking event",
     description:
       "Experience the diverse culinary scene of Harlem with this multi-day festival.",
     latitude: 40.8116,
@@ -68,6 +74,7 @@ const hobbyData = [
   {
     id: 7,
     name: "Taste of Times Square",
+    type: "cooking event",
     description:
       "Sample food and drinks from some of the city's top restaurants in the heart of Times Square.",
     latitude: 40.7589,
@@ -79,6 +86,7 @@ const hobbyData = [
   {
     id: 8,
     name: "Brooklyn Wine Fest",
+    type: "cooking event",
     description:
       "A day of wine tasting from local and international vineyards, along with food from Brooklyn's top restaurants.",
     latitude: 40.7128,
@@ -90,6 +98,7 @@ const hobbyData = [
   {
     id: 9,
     name: "The Big Chocolate Show",
+    type: "cooking event",
     description:
       "Indulge in all things chocolate, with tastings, demonstrations, and workshops led by chocolate experts.",
     latitude: 40.7589,
@@ -101,6 +110,7 @@ const hobbyData = [
   {
     id: 10,
     name: "NYC Hot Sauce Expo",
+    type: "cooking event",
     description:
       "A spicy food festival featuring hot sauce vendors from around the world.",
     latitude: 40.7319,
@@ -112,6 +122,7 @@ const hobbyData = [
   {
     id: 11,
     name: "New York Coffee Festival",
+    type: "cooking event",
     description:
       "A celebration of coffee, featuring tastings, workshops, and demonstrations by top baristas and roasters.",
     latitude: 40.7112,
@@ -123,6 +134,7 @@ const hobbyData = [
   {
     id: 12,
     name: "New York City BBQ Festival",
+    type: "cooking event",
     description:
       "Sample barbecue from some of the city's top pitmasters, along with live music and other entertainment.",
     latitude: 40.6769,
@@ -134,6 +146,7 @@ const hobbyData = [
   {
     id: 13,
     name: "New York Vegandale Food Drink Festival",
+    type: "cooking event",
     description:
       "A festival celebrating all things vegan, with food, drinks, and products from vendors around the city.",
     latitude: 40.7964,
@@ -145,6 +158,7 @@ const hobbyData = [
   {
     id: 14,
     name: "New York Oyster Week",
+    type: "cooking event",
     description:
       "Celebrate the city's rich oyster culture with a week of events, including tastings, workshops, and more.",
     latitude: 40.7417,
@@ -156,6 +170,7 @@ const hobbyData = [
   {
     id: 15,
     name: "New York City Dumpling Festival",
+    type: "cooking event",
     description:
       "Sample dumplings from around the world, along with other Asian-inspired foods and drinks.",
     latitude: 40.7021,
@@ -167,6 +182,7 @@ const hobbyData = [
   {
     id: 16,
     name: "New York City Beer Week",
+    type: "cooking event",
     description:
       "A week-long celebration of craft beer, featuring tastings, brewery tours, and other events throughout the city.",
     latitude: 40.7039,
@@ -178,6 +194,7 @@ const hobbyData = [
   {
     id: 17,
     name: "New York City Wine & Food Festival",
+    type: "cooking event",
     description:
       "One of the city's largest food festivals, featuring tastings, cooking demonstrations, and other events hosted by celebrity chefs.",
     latitude: 40.7681,
@@ -189,6 +206,7 @@ const hobbyData = [
   {
     id: 18,
     name: "New York City Pizza Festival",
+    type: "cooking event",
     description:
       "Sample pizza from some of the city's top pizzerias, along with other Italian-inspired foods and drinks.",
     latitude: 40.7044,
@@ -200,6 +218,7 @@ const hobbyData = [
   {
     id: 19,
     name: "New York City Ice Cream Blizzard",
+    type: "cooking event",
     description:
       "A celebration of ice cream, featuring tastings, workshops, and other events hosted by top ice cream makers from around the city.",
     latitude: 40.7426,
@@ -211,6 +230,7 @@ const hobbyData = [
   {
     id: 20,
     name: "New York City Bacon Festival",
+    type: "cooking event",
     description:
       "A festival celebrating all things bacon, with tastings, workshops, and other events hosted by top chefs and food vendors.",
     latitude: 40.7064,
@@ -221,6 +241,7 @@ const hobbyData = [
   {
     id: "21",
     name: "TK MMA",
+    type: "gym",
     description:
       "Honestly if I could give a higher rating I would. I love my morning classes at UN1T Jumeriah, it puts me in a great mood for the day. The trainers are always so welcoming and make me feel comfortable. They help when needed to correct my form or answer any questions I have. The gym has got a great vibe and I feel apart of a community. Highly recommend..",
     latitude: 25.089779597788648,
@@ -231,6 +252,7 @@ const hobbyData = [
   {
     id: "22",
     name: "UFC Gym - JBR",
+    type: "gym",
     description:
       "The gym is not just a place to exercise, it's where you build your strongest self.With every workout, you're building strength, endurance, and confidence",
     latitude: 25.08270502809145,
@@ -241,6 +263,7 @@ const hobbyData = [
   {
     id: "23",
     name: "UFC Gym - Business Bay",
+    type: "gym",
     description:
       "Every time you step into the gym, you're taking a step towards a healthier and happier you. The benefits of regular exercise go far beyond just physical health, they extend to mental health and well-being too",
     latitude: 25.18488168235414,
@@ -251,6 +274,7 @@ const hobbyData = [
   {
     id: "24",
     name: "Hammer Gym DMCC",
+    type: "gym",
     description:
       "The gym is a place of transformation, where you can turn your weaknesses into strengths and your doubts into victories.Every time you push yourself a little further, you're proving to yourself that you can achieve what you set your mind to",
     latitude: 25.07758846370632,
@@ -261,6 +285,7 @@ const hobbyData = [
   {
     id: "25",
     name: "Desert Barbell Sports Club",
+    type: "gym",
     description:
       "The gym is where excuses go to die. There's no room for procrastination or laziness when you're surrounded by people who are committed to their goals",
     latitude: 25.11141067993915,
