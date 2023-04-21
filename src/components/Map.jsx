@@ -80,7 +80,6 @@ const Map = () => {
     let filterData = hobbyData.filter(
       (hobby) =>
         hobby?.type?.toLowerCase().includes(hobbyType?.toLowerCase()) &&
-        // getDistanceFromLatLonInKm()
         getDistanceFromLatLonInKm(
           searchLatLng?.lat,
           searchLatLng?.lng,
@@ -172,28 +171,33 @@ const Map = () => {
         </div>
       )}
       <div className="">
-        {searchLatLng?.lat != null && (
+        {searchLatLng?.lat != null && hobbyType && (
           <div className="flex flex-wrap px-3 mt-5 pb-5">
-            {hobbies.map((hobby, index) => (
-              <Card className="md:w-1/4 sm:w-1/2 px-1" key={index}>
-                <CardActionArea>
-                  <CardMedia
-                    component="img"
-                    height="140"
-                    image={hobby?.image}
-                    alt="green iguana"
-                  />
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                      {hobby?.name}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      {hobby?.description?.substring(0, 100)}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
-            ))}
+            {hobbies.map(
+              (hobby, index) =>
+                hobby?.type
+                  ?.toLowerCase()
+                  .includes(hobbyType?.toLowerCase()) && (
+                  <Card className="md:w-1/4 sm:w-1/2 px-1" key={index}>
+                    <CardActionArea>
+                      <CardMedia
+                        component="img"
+                        height="140"
+                        image={hobby?.image}
+                        alt="green iguana"
+                      />
+                      <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                          {hobby?.name}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          {hobby?.description?.substring(0, 100)}
+                        </Typography>
+                      </CardContent>
+                    </CardActionArea>
+                  </Card>
+                )
+            )}
           </div>
         )}
       </div>

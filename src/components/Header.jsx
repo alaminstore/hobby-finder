@@ -53,7 +53,7 @@ const Header = (props) => {
           onClick={() => props.reset(true)}
           startIcon={<RestartAltIcon fontSize="small" />}
         >
-          reset
+          reset Map
         </Button>
         <Button
           onClick={() => props.isSeach(true)}
