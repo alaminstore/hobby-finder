@@ -1,6 +1,8 @@
 import { Button, Slider, TextField, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import GooglePlaceAutoComplete from "./GooglePlaceAutoComplete";
+import SendIcon from "@mui/icons-material/Send";
+import RestartAltIcon from "@mui/icons-material/RestartAlt";
 
 const Header = (props) => {
   const [latLng, setLatLng] = useState(null);
@@ -10,7 +12,7 @@ const Header = (props) => {
   }, [latLng]);
 
   return (
-    <div className="bg-pink-400">
+    <div className="px-3">
       <Typography variant="h4" className="text-center py-2">
         H o b b y F i n d er
       </Typography>
@@ -42,12 +44,22 @@ const Header = (props) => {
         </div>
       </div>
 
-      <div>
-        <Button variant="outlined" onClick={() => props.reset(true)}>
+      <div className="flex justify-center gap-1  my-3">
+        <Button
+          variant="contained"
+          size="small"
+          color="secondary"
+          onClick={() => props.reset(true)}
+          startIcon={<RestartAltIcon fontSize="small" />}
+        >
           reset
         </Button>
-        <Button onClick={() => props.isSeach(true)} variant="outlined">
-          {" "}
+        <Button
+          onClick={() => props.isSeach(true)}
+          variant="contained"
+          size="small"
+          startIcon={<SendIcon fontSize="small" />}
+        >
           search
         </Button>
       </div>

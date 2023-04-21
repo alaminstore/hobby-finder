@@ -101,7 +101,7 @@ const Map = () => {
         newSearchLatLng={setSearchLatLng}
       />
       {location.latitude && (
-        <div style={{ height: "50vh", width: "50vw" }} className="mt-5">
+        <div style={{ height: "50vh", width: "50vw" }} className="mt-5 px-3">
           <GoogleMapReact
             bootstrapURLKeys={{
               key: "AIzaSyAsprnJybW_KqoOy7cbmd9qQWx-wSxuKwU&libraries",
