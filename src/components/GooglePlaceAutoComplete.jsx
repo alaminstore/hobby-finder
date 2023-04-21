@@ -5,6 +5,8 @@ import PlacesAutocomplete, {
   geocodeByPlaceId,
   getLatLng,
 } from "react-places-autocomplete";
+import PlaceIcon from "@mui/icons-material/Place";
+
 const GooglePlaceAutoComplete = ({ newLatlng }) => {
   const [address, setAddress] = useState("");
   const [coordinates, setCoordinates] = useState({
@@ -18,9 +20,9 @@ const GooglePlaceAutoComplete = ({ newLatlng }) => {
 
   const handleSelect = async (value) => {
     const results = await geocodeByAddress(value);
-    const ll = await getLatLng(results[0]);
+    const latLng = await getLatLng(results[0]);
     setAddress(value);
-    setCoordinates(ll);
+    setCoordinates(latLng);
   };
   return (
     <div>
@@ -40,16 +42,23 @@ const GooglePlaceAutoComplete = ({ newLatlng }) => {
                 placeholder: "Search Places ...",
               })}
             ></TextField>
-            <div className="autocomplete-dropdown-container">
-              {loading && <div>Loading...</div>}
+            <div className="autocomplete-dropdown-container bg-red-200">
+              {loading && <div className="text-center">Loading...</div>}
               {suggestions.map((suggestion) => {
                 const className = suggestion.active
                   ? "suggestion-item--active"
                   : "suggestion-item";
-                // inline style for demonstration purpose
                 const style = suggestion.active
-                  ? { backgroundColor: "#fafafa", cursor: "pointer" }
-                  : { backgroundColor: "#ffffff", cursor: "pointer" };
+                  ? {
+                      backgroundColor: "#cce6ff",
+                      cursor: "pointer",
+                      zIndex: "3",
+                    }
+                  : {
+                      backgroundColor: "#ffffff",
+                      cursor: "pointer",
+                      zIndex: "3",
+                    };
                 return (
                   <div
                     {...getSuggestionItemProps(suggestion, {
@@ -57,7 +66,10 @@ const GooglePlaceAutoComplete = ({ newLatlng }) => {
                       style,
                     })}
                   >
-                    <span>{suggestion.description}</span>
+                    <div className="flex gap-1 justify-normal items-center">
+                      <PlaceIcon fontSize="small" color="secondary" />
+                      <span>{suggestion.description}</span>
+                    </div>
                   </div>
                 );
               })}

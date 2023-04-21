@@ -18,8 +18,7 @@ const Map = () => {
   const [selectedData, setSelectedData] = useState(null);
   const [hobbyType, setHobbyType] = useState(null);
   const [isSearchEnable, setIsSearchEnable] = useState(null);
-  const [distance, setDistance] = useState(40);
-  const [resetAll, setResetAll] = useState(false);
+  const [distance, setDistance] = useState(70);
   const [searchLatLng, setSearchLatLng] = useState({ lat: null, lng: null });
   const [center, setCenter] = useState(null);
 

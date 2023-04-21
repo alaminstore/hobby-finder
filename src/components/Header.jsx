@@ -13,10 +13,11 @@ const Header = (props) => {
 
   return (
     <div className="px-3">
-      <Typography variant="h4" className="text-center py-2">
+      <Typography variant="h4" component="div" className="text-center py-5">
         H o b b y F i n d er
       </Typography>
-      <div className="flex gap-3 justify-center item-center align-middle">
+
+      <div className="flex gap-3 mt-5 justify-center item-center align-middle">
         <TextField
           label="Seach for a hobby"
           variant="outlined"
