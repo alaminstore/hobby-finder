@@ -175,66 +175,72 @@ const Map = () => {
       <div className="">
         {searchLatLng?.lat != null && hobbyType && (
           <div className="flex flex-wrap px-3 mt-5 pb-5">
-            {hobbies.map(
-              (hobby, index) =>
-                hobby?.type
-                  ?.toLowerCase()
-                  .includes(hobbyType?.toLowerCase()) && (
-                  <Card className="md:w-1/4 sm:w-1/2 px-1" key={index}>
-                    <CardActionArea>
-                      <CardMedia
-                        component="img"
-                        className="h-[190px] w-auto"
-                        image={hobby?.image}
-                        alt="green iguana"
-                      />
-                      <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
-                          {hobby?.name}
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                          {hobby?.description?.substring(0, 100)}
-                        </Typography>
+            {hobbies.length > 0 ? (
+              hobbies.map(
+                (hobby, index) =>
+                  hobby?.type
+                    ?.toLowerCase()
+                    .includes(hobbyType?.toLowerCase()) && (
+                    <Card className="md:w-1/4 sm:w-1/2 px-1" key={index}>
+                      <CardActionArea>
+                        <CardMedia
+                          component="img"
+                          className="h-[190px] w-auto"
+                          image={hobby?.image}
+                          alt="green iguana"
+                        />
+                        <CardContent>
+                          <Typography gutterBottom variant="h5" component="div">
+                            {hobby?.name}
+                          </Typography>
+                          <Typography variant="body2" color="text.secondary">
+                            {hobby?.description?.substring(0, 100)}
+                          </Typography>
 
-                        <Typography
-                          variant="body2"
-                          color="text.secondary"
-                          className="bg-neutral-100 rounded-md text-center mt-1"
-                        >
-                          <strong>
-                            {getDistanceFromLatLonInKm(
-                              searchLatLng?.lat,
-                              searchLatLng?.lng,
-                              hobby.latitude,
-                              hobby.longitude
-                            ).toFixed(2)}
-                          </strong>
-                          &nbsp; Km From{" "}
-                          <span className="text-[#e09f63]">
-                            {searchAddress}
-                          </span>
-                        </Typography>
+                          <Typography
+                            variant="body2"
+                            color="text.secondary"
+                            className="bg-neutral-100 rounded-md text-center mt-1"
+                          >
+                            <strong>
+                              {getDistanceFromLatLonInKm(
+                                searchLatLng?.lat,
+                                searchLatLng?.lng,
+                                hobby.latitude,
+                                hobby.longitude
+                              ).toFixed(2)}
+                            </strong>
+                            &nbsp; Km From{" "}
+                            <span className="text-[#e09f63]">
+                              {searchAddress}
+                            </span>
+                          </Typography>
 
-                        <Typography
-                          variant="body2"
-                          color="text.secondary"
-                          className="bg-neutral-100 rounded-md text-center mt-1"
-                        >
-                          <strong>
-                            {getDistanceFromLatLonInKm(
-                              location?.latitude,
-                              location?.longitude,
-                              hobby.latitude,
-                              hobby.longitude
-                            ).toFixed(2)}
-                          </strong>
-                          &nbsp; Km From{" "}
-                          <span className="text-[#e09f63]">You</span>
-                        </Typography>
-                      </CardContent>
-                    </CardActionArea>
-                  </Card>
-                )
+                          <Typography
+                            variant="body2"
+                            color="text.secondary"
+                            className="bg-neutral-100 rounded-md text-center mt-1"
+                          >
+                            <strong>
+                              {getDistanceFromLatLonInKm(
+                                location?.latitude,
+                                location?.longitude,
+                                hobby.latitude,
+                                hobby.longitude
+                              ).toFixed(2)}
+                            </strong>
+                            &nbsp; Km From{" "}
+                            <span className="text-[#e09f63]">You</span>
+                          </Typography>
+                        </CardContent>
+                      </CardActionArea>
+                    </Card>
+                  )
+              )
+            ) : (
+              <span className="flex justify-center w-full">
+                No Location is available right now
+              </span>
             )}
           </div>
         )}
