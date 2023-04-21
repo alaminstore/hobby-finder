@@ -111,7 +111,7 @@ const Map = () => {
         <div style={{ height: "50vh" }} className="px-3">
           <GoogleMapReact
             bootstrapURLKeys={{
-              key: "AIzaSyAsprnJybW_KqoOy7cbmd9qQWx-wSxuKwU&libraries",
+              key: process.env.GOOGLE_MAP_KEY,
             }}
             defaultCenter={{
               lat: location?.latitude,
