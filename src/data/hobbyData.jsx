@@ -218,6 +218,56 @@ const hobbyData = [
     image:
       "https://www.nycgo.com/images/uploads/articles/2018/bacon-festival-header.jpg",
   },
+  {
+    id: "21",
+    name: "TK MMA",
+    description:
+      "Honestly if I could give a higher rating I would. I love my morning classes at UN1T Jumeriah, it puts me in a great mood for the day. The trainers are always so welcoming and make me feel comfortable. They help when needed to correct my form or answer any questions I have. The gym has got a great vibe and I feel apart of a community. Highly recommend..",
+    latitude: 25.089779597788648,
+    longitude: 55.15274596790836,
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjJSVeT-58qOEIsddn4ywaxnsC0PZGjZeSqA&usqp=CAU",
+  },
+  {
+    id: "22",
+    name: "UFC Gym - JBR",
+    description:
+      "The gym is not just a place to exercise, it's where you build your strongest self.With every workout, you're building strength, endurance, and confidence",
+    latitude: 25.08270502809145,
+    longitude: 55.13996748695172,
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuH0Ix042oo8xai8MbMiNJEaz7g5VeAi6QBQ&usqp=CAU",
+  },
+  {
+    id: "23",
+    name: "UFC Gym - Business Bay",
+    description:
+      "Every time you step into the gym, you're taking a step towards a healthier and happier you. The benefits of regular exercise go far beyond just physical health, they extend to mental health and well-being too",
+    latitude: 25.18488168235414,
+    longitude: 55.27909435626708,
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhuu28PtGlAxh3q-Lzd1x1mmjfKqYEQs5k9g&usqp=CAU",
+  },
+  {
+    id: "24",
+    name: "Hammer Gym DMCC",
+    description:
+      "The gym is a place of transformation, where you can turn your weaknesses into strengths and your doubts into victories.Every time you push yourself a little further, you're proving to yourself that you can achieve what you set your mind to",
+    latitude: 25.07758846370632,
+    longitude: 55.14733201578764,
+    image:
+      "https://cdn.cloudflare.steamstatic.com/steam/apps/1339830/header.jpg?t=1651773290",
+  },
+  {
+    id: "25",
+    name: "Desert Barbell Sports Club",
+    description:
+      "The gym is where excuses go to die. There's no room for procrastination or laziness when you're surrounded by people who are committed to their goals",
+    latitude: 25.11141067993915,
+    longitude: 55.227681929280614,
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuH0Ix042oo8xai8MbMiNJEaz7g5VeAi6QBQ&usqp=CAU",
+  },
 ];
 
 export default hobbyData;

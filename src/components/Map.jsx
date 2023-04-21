@@ -201,37 +201,4 @@ const Map = () => {
   );
 };
 
-// let hobbyData = [
-//   {
-//     id: "1",
-//     name: "TK MMA",
-//     latitude: 25.089779597788648,
-//     longitude: 55.15274596790836,
-//   },
-//   {
-//     id: "2",
-//     name: "UFC Gym - JBR",
-//     latitude: 25.08270502809145,
-//     longitude: 55.13996748695172,
-//   },
-//   {
-//     id: "3",
-//     name: "UFC Gym - Business Bay",
-//     latitude: 25.18488168235414,
-//     longitude: 55.27909435626708,
-//   },
-//   {
-//     id: "4",
-//     name: "Hammer Gym DMCC",
-//     latitude: 25.07758846370632,
-//     longitude: 55.14733201578764,
-//   },
-//   {
-//     id: "5",
-//     name: "Desert Barbell Sports Club",
-//     latitude: 25.11141067993915,
-//     longitude: 55.227681929280614,
-//   },
-// ];
-
 export default Map;
