@@ -93,7 +93,6 @@ const Map = () => {
   };
   const coverage = (customDistance) => {
     setDistance(customDistance);
-    console.log("distance", distance);
   };
 
   return (
