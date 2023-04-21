@@ -28,21 +28,16 @@ const GooglePlaceAutoComplete = ({ newLatlng }) => {
         value={address}
         onChange={setAddress}
         onSelect={handleSelect}
+        className="w-full"
       >
         {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
-          <div>
-            {/* <input
-              {...getInputProps({
-                placeholder: "Search Places ...",
-                className: "location-search-input",
-              })}
-            /> */}
+          <div className="min-w-full">
             <TextField
-              label="Seach for a hobby"
+              style={{ width: "100%" }}
+              label="Location"
               variant="outlined"
               {...getInputProps({
                 placeholder: "Search Places ...",
-                className: "location-search-input",
               })}
             ></TextField>
             <div className="autocomplete-dropdown-container">

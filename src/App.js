@@ -1,8 +1,6 @@
-
-import './App.css';
+import "./App.css";
 import Map from "./components/Map";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Gym from "./components/Gym";
 function App() {
   return (
     <div className="App">
@@ -10,7 +8,6 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" exact element={<Map />} />
-          <Route path="/gym/:gymId" exact element={<Gym />} />
         </Routes>
       </Router>
     </div>
