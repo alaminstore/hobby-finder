@@ -105,100 +105,99 @@ const Map = () => {
         reset={handleReset}
         newSearchLatLng={setSearchLatLng}
       />
-      <div className="flex justify-center items-center mt-5">
-        {location.latitude && (
-          <div style={{ height: "50vh" }} className="px-3 w-[50%]">
-            <GoogleMapReact
-              bootstrapURLKeys={{
-                key: "AIzaSyAsprnJybW_KqoOy7cbmd9qQWx-wSxuKwU&libraries",
-              }}
-              defaultCenter={{
-                lat: location?.latitude,
-                lng: location?.longitude,
-              }}
-              center={center}
-              defaultZoom={12}
-              yesIWantToUseGoogleMapApiInternals
-            >
-              {hobbies?.map((hobby, index) => (
-                <LocationOnIcon
-                  key={index}
-                  color={"secondary"}
-                  lat={hobby?.latitude}
-                  lng={hobby?.longitude}
-                  onClick={() => {
-                    setSelectedData(hobby.id);
-                    console.log("selectedData", hobby.id);
-                  }}
-                />
-              ))}
 
-              {hobbies?.map((hobby, index) => {
-                if (selectedData == hobby.id) {
-                  return (
-                    <div
-                      key={index}
-                      lat={hobby?.latitude}
-                      lng={hobby?.longitude}
-                      className="bg-[#ffffff] p-3 text-center relative w-[100px] h-[60px] rounded-md "
+      {location.latitude && (
+        <div style={{ height: "50vh" }} className="px-3">
+          <GoogleMapReact
+            bootstrapURLKeys={{
+              key: "AIzaSyAsprnJybW_KqoOy7cbmd9qQWx-wSxuKwU&libraries",
+            }}
+            defaultCenter={{
+              lat: location?.latitude,
+              lng: location?.longitude,
+            }}
+            center={center}
+            defaultZoom={12}
+            yesIWantToUseGoogleMapApiInternals
+          >
+            {hobbies?.map((hobby, index) => (
+              <LocationOnIcon
+                key={index}
+                color={"secondary"}
+                lat={hobby?.latitude}
+                lng={hobby?.longitude}
+                onClick={() => {
+                  setSelectedData(hobby.id);
+                  console.log("selectedData", hobby.id);
+                }}
+              />
+            ))}
+
+            {hobbies?.map((hobby, index) => {
+              if (selectedData == hobby.id) {
+                return (
+                  <div
+                    key={index}
+                    lat={hobby?.latitude}
+                    lng={hobby?.longitude}
+                    className="bg-[#ffffff] p-3 text-center relative w-[100px] h-[60px] rounded-md "
+                  >
+                    <Typography
+                      className="absolute left-0 right-0"
+                      style={{ fontSize: "12px" }}
                     >
-                      <Typography
-                        className="absolute left-0 right-0"
-                        style={{ fontSize: "12px" }}
-                      >
-                        {hobby.name}
-                      </Typography>
-                    </div>
-                  );
-                } else {
-                  return null;
-                }
-              })}
-              {searchLatLng?.lat ? (
-                <PushPinIcon
-                  style={{ color: "#b00904" }}
-                  lat={searchLatLng?.lat}
-                  lng={searchLatLng?.lng}
-                />
-              ) : (
-                <MyLocationIcon
-                  fontSize="large"
-                  color={"primary"}
-                  lat={location?.latitude}
-                  lng={location?.longitude}
-                />
-              )}
-            </GoogleMapReact>
+                      {hobby.name}
+                    </Typography>
+                  </div>
+                );
+              } else {
+                return null;
+              }
+            })}
+            {searchLatLng?.lat ? (
+              <PushPinIcon
+                style={{ color: "#b00904" }}
+                lat={searchLatLng?.lat}
+                lng={searchLatLng?.lng}
+              />
+            ) : (
+              <MyLocationIcon
+                fontSize="large"
+                color={"primary"}
+                lat={location?.latitude}
+                lng={location?.longitude}
+              />
+            )}
+          </GoogleMapReact>
+        </div>
+      )}
+      <div className="">
+        {searchLatLng?.lat != null && (
+          <div className="flex flex-wrap px-3 mt-5">
+            {hobbies.map((hobby, index) => (
+              <Card className="md:w-1/4 sm:w-1/2 px-1" key={index}>
+                <CardActionArea>
+                  <CardMedia
+                    component="img"
+                    height="140"
+                    image="/static/images/cards/contemplative-reptile.jpg"
+                    alt="green iguana"
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                      {hobby?.name}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      Lizards are a widespread group of squamate reptiles, with
+                      over 6,000 species, ranging across all continents except
+                      Antarctica
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            ))}
           </div>
         )}
-        <div className="w-[50%]">
-          {searchLatLng?.lat != null && (
-            <div className="flex gap-1 flex-wrap">
-              {hobbies.map((hobby, index) => (
-                <Card sx={{ maxWidth: 345 }} key={index}>
-                  <CardActionArea>
-                    <CardMedia
-                      component="img"
-                      height="140"
-                      image="/static/images/cards/contemplative-reptile.jpg"
-                      alt="green iguana"
-                    />
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
-                        {hobby?.name}
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        Lizards are a widespread group of squamate reptiles,
-                        with over 6,000 species, ranging across all continents
-                        except Antarctica
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                </Card>
-              ))}
-            </div>
-          )}
-        </div>
       </div>
     </>
   );
