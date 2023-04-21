@@ -24,9 +24,6 @@ const GooglePlaceAutoComplete = ({ newLatlng }) => {
   };
   return (
     <div>
-      <p>lat: {coordinates.lat}</p>
-      <p>lng: {coordinates.lng}</p>
-      <p>address: {address}</p>
       <PlacesAutocomplete
         value={address}
         onChange={setAddress}

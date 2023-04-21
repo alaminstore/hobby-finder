@@ -38,9 +38,14 @@ const Map = () => {
   const handleReset = (reset) => {
     if (reset) {
       setSelectedData(null);
+      setCenter({
+        lat: location?.latitude,
+        lng: location?.longitude,
+      });
       setDistance(40);
       setHobbyType(null);
       setHobbies(hobbyData);
+      setSearchLatLng({ lat: null, lng: null });
     }
   };
 
@@ -158,7 +163,6 @@ const Map = () => {
               />
             )}
           </GoogleMapReact>
-          
         </div>
       )}
     </>
