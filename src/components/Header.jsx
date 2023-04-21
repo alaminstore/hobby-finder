@@ -1,7 +1,7 @@
 import { Button, Slider, TextField, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import CurrentLocation from "./CurrentLocation";
-import GooglePlaceAutoComplete from "../GooglePlaceAutoComplete";
+import GooglePlaceAutoComplete from "./GooglePlaceAutoComplete";
 
 const Header = (props) => {
   const [latLng, setLatLng] = useState(null);
