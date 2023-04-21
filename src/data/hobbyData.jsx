@@ -293,6 +293,17 @@ const hobbyData = [
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuH0Ix042oo8xai8MbMiNJEaz7g5VeAi6QBQ&usqp=CAU",
   },
+  {
+    id: "25",
+    name: "Sher-E-Bangla National Cricket Stadium",
+    type: "play",
+    description:
+      "Cricket is not just a sport, it is a way of life for many people. The game of cricket has the power to bring communities and nations together. It is a game that demands focus, patience, and skill. Whether you are a player or a spectator, cricket has the ability to inspire, motivate and bring a sense of joy and excitement to your life. The feeling of hitting a perfect shot or taking a game-changing catch is unparalleled. The game of cricket has a rich history, and the culture and passion that surround it are truly unique. It is a sport that teaches us to never give up and to always strive for excellence. So, if you haven't already, give cricket a try and experience the thrill and excitement of this wonderful game.",
+    latitude: 23.80718729409322,
+    longitude: 90.36356385155317,
+    image:
+      "https://lh5.googleusercontent.com/p/AF1QipNh33bJ8rZNGaJqbyY_b_nTLehOBGab0hJYREPP=w408-h261-k-no",
+  },
 ];
 
 export default hobbyData;

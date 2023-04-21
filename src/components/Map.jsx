@@ -214,6 +214,23 @@ const Map = () => {
                             {searchAddress}
                           </span>
                         </Typography>
+
+                        <Typography
+                          variant="body2"
+                          color="text.secondary"
+                          className="bg-neutral-100 rounded-md text-center mt-1"
+                        >
+                          <strong>
+                            {getDistanceFromLatLonInKm(
+                              location?.latitude,
+                              location?.longitude,
+                              hobby.latitude,
+                              hobby.longitude
+                            ).toFixed(2)}
+                          </strong>
+                          &nbsp; Km From{" "}
+                          <span className="text-[#e09f63]">You</span>
+                        </Typography>
                       </CardContent>
                     </CardActionArea>
                   </Card>
