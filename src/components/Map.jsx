@@ -4,6 +4,7 @@ import Header from "./Header";
 import PushPinIcon from "@mui/icons-material/PushPin";
 import MyLocationIcon from "@mui/icons-material/MyLocation";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
+import hobbyData from "../data/hobbyData";
 import {
   Card,
   CardActionArea,
@@ -173,14 +174,14 @@ const Map = () => {
       )}
       <div className="">
         {searchLatLng?.lat != null && (
-          <div className="flex flex-wrap px-3 mt-5">
+          <div className="flex flex-wrap px-3 mt-5 pb-5">
             {hobbies.map((hobby, index) => (
               <Card className="md:w-1/4 sm:w-1/2 px-1" key={index}>
                 <CardActionArea>
                   <CardMedia
                     component="img"
                     height="140"
-                    image="/static/images/cards/contemplative-reptile.jpg"
+                    image={hobby?.image}
                     alt="green iguana"
                   />
                   <CardContent>
@@ -188,9 +189,7 @@ const Map = () => {
                       {hobby?.name}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                      Lizards are a widespread group of squamate reptiles, with
-                      over 6,000 species, ranging across all continents except
-                      Antarctica
+                      {hobby?.description?.substring(0, 100)}
                     </Typography>
                   </CardContent>
                 </CardActionArea>
@@ -203,37 +202,37 @@ const Map = () => {
   );
 };
 
-let hobbyData = [
-  {
-    id: "1",
-    name: "TK MMA",
-    latitude: 25.089779597788648,
-    longitude: 55.15274596790836,
-  },
-  {
-    id: "2",
-    name: "UFC Gym - JBR",
-    latitude: 25.08270502809145,
-    longitude: 55.13996748695172,
-  },
-  {
-    id: "3",
-    name: "UFC Gym - Business Bay",
-    latitude: 25.18488168235414,
-    longitude: 55.27909435626708,
-  },
-  {
-    id: "4",
-    name: "Hammer Gym DMCC",
-    latitude: 25.07758846370632,
-    longitude: 55.14733201578764,
-  },
-  {
-    id: "5",
-    name: "Desert Barbell Sports Club",
-    latitude: 25.11141067993915,
-    longitude: 55.227681929280614,
-  },
-];
+// let hobbyData = [
+//   {
+//     id: "1",
+//     name: "TK MMA",
+//     latitude: 25.089779597788648,
+//     longitude: 55.15274596790836,
+//   },
+//   {
+//     id: "2",
+//     name: "UFC Gym - JBR",
+//     latitude: 25.08270502809145,
+//     longitude: 55.13996748695172,
+//   },
+//   {
+//     id: "3",
+//     name: "UFC Gym - Business Bay",
+//     latitude: 25.18488168235414,
+//     longitude: 55.27909435626708,
+//   },
+//   {
+//     id: "4",
+//     name: "Hammer Gym DMCC",
+//     latitude: 25.07758846370632,
+//     longitude: 55.14733201578764,
+//   },
+//   {
+//     id: "5",
+//     name: "Desert Barbell Sports Club",
+//     latitude: 25.11141067993915,
+//     longitude: 55.227681929280614,
+//   },
+// ];
 
 export default Map;

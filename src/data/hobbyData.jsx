@@ -7,7 +7,7 @@ const hobbyData = [
     latitude: 40.7421,
     longitude: -74.0041,
     image:
-      "https://www.google.com/search?q=cooking+event+new+york+city&rlz=1C1CHBD_enBD1034BD1034&sxsrf=APwXEdfOYU02T3q861Dy0-I2sZmpEMN3TA:1682057918179&source=lnms&tbm=isch&sa=X&ved=2ahUKEwigmNGFqrr-AhW2cmwGHXL5ABsQ_AUoAXoECAEQAw&biw=1536&bih=763&dpr=1.25",
+      "https://cdn.evbstatic.com/s3-build/fe/build/images/7b607e2249addb0ff1e96fb5db7d959f-food.jpg",
   },
 
   {
@@ -219,3 +219,5 @@ const hobbyData = [
       "https://www.nycgo.com/images/uploads/articles/2018/bacon-festival-header.jpg",
   },
 ];
+
+export default hobbyData;
