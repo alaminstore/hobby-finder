@@ -6,10 +6,12 @@ import RestartAltIcon from "@mui/icons-material/RestartAlt";
 
 const Header = (props) => {
   const [latLng, setLatLng] = useState(null);
+  const [address, setAddress] = useState(null);
 
   useEffect(() => {
     props.newSearchLatLng(latLng);
-  }, [latLng]);
+    props.searchAdds(address);
+  }, [latLng, address]);
 
   return (
     <div className="px-3">
@@ -26,7 +28,7 @@ const Header = (props) => {
         ></TextField>
 
         <div className="w-1/3">
-          <GooglePlaceAutoComplete newLatlng={setLatLng} />
+          <GooglePlaceAutoComplete newLatlng={setLatLng} placeAddress={setAddress} />
         </div>
 
         <div className="flex flex-col w-1/2">

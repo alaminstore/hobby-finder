@@ -7,7 +7,7 @@ import PlacesAutocomplete, {
 } from "react-places-autocomplete";
 import PlaceIcon from "@mui/icons-material/Place";
 
-const GooglePlaceAutoComplete = ({ newLatlng }) => {
+const GooglePlaceAutoComplete = ({ newLatlng, placeAddress }) => {
   const [address, setAddress] = useState("");
   const [coordinates, setCoordinates] = useState({
     lat: null,
@@ -16,7 +16,8 @@ const GooglePlaceAutoComplete = ({ newLatlng }) => {
 
   useEffect(() => {
     newLatlng(coordinates);
-  }, [coordinates]);
+    placeAddress(address);
+  }, [coordinates, address]);
 
   const handleSelect = async (value) => {
     const results = await geocodeByAddress(value);

@@ -1,14 +1,14 @@
 const hobbyData = [
   {
     id: 1,
-    name: "NYC Food & Wine Festival",
+    name: "Stir Cooking School",
     type: "cooking event",
     description:
       "Join us for a week of culinary events featuring world-renowned chefs and wineries from around the globe.",
-    latitude: 40.8869,
-    longitude: 73.8762,
+    latitude: 40.38421275611646,
+    longitude: -104.85561045681692,
     image:
-      "https://cdn.evbstatic.com/s3-build/fe/build/images/7b607e2249addb0ff1e96fb5db7d959f-food.jpg",
+      "https://lh5.googleusercontent.com/p/AF1QipNMldfaGR7_E3MoWtsQP1P10Ol2Pf93-wCvydsK=w408-h408-k-no",
   },
 
   {
@@ -17,10 +17,10 @@ const hobbyData = [
     type: "cooking event",
     description:
       "Sample food and wine from the Upper West Side's top restaurants and chefs.",
-    latitude: 40.787,
-    longitude: -73.9754,
+    latitude: 35.51434310580782,
+    longitude: -118.40515075367198,
     image:
-      "https://www.nycgo.com/images/uploads/articles/2018/taste-of-the-upper-west-side.jpg",
+      "https://cdn.evbstatic.com/s3-build/fe/build/images/7b607e2249addb0ff1e96fb5db7d959f-food.jpg",
   },
 
   {

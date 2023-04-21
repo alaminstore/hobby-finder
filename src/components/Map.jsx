@@ -21,6 +21,7 @@ const Map = () => {
   const [distance, setDistance] = useState(70);
   const [searchLatLng, setSearchLatLng] = useState({ lat: null, lng: null });
   const [center, setCenter] = useState(null);
+  const [searchAddress, setSearchAddress] = useState(null);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function (position) {
@@ -48,7 +49,7 @@ const Map = () => {
         lat: location?.latitude,
         lng: location?.longitude,
       });
-      setDistance(40);
+      setDistance(70);
       setHobbyType(null);
       setHobbies(hobbyData);
       setSearchLatLng({ lat: null, lng: null });
@@ -103,6 +104,7 @@ const Map = () => {
         coverage={coverage}
         reset={handleReset}
         newSearchLatLng={setSearchLatLng}
+        searchAdds={setSearchAddress}
       />
 
       {location.latitude && (
@@ -116,7 +118,7 @@ const Map = () => {
               lng: location?.longitude,
             }}
             center={center}
-            defaultZoom={12}
+            defaultZoom={11}
             yesIWantToUseGoogleMapApiInternals
           >
             {hobbies?.map((hobby, index) => (
@@ -182,7 +184,7 @@ const Map = () => {
                     <CardActionArea>
                       <CardMedia
                         component="img"
-                        height="140"
+                        className="h-[190px] w-auto"
                         image={hobby?.image}
                         alt="green iguana"
                       />
@@ -192,6 +194,25 @@ const Map = () => {
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
                           {hobby?.description?.substring(0, 100)}
+                        </Typography>
+
+                        <Typography
+                          variant="body2"
+                          color="text.secondary"
+                          className="bg-neutral-100 rounded-md text-center mt-1"
+                        >
+                          <strong>
+                            {getDistanceFromLatLonInKm(
+                              searchLatLng?.lat,
+                              searchLatLng?.lng,
+                              hobby.latitude,
+                              hobby.longitude
+                            ).toFixed(2)}
+                          </strong>
+                          &nbsp; Km From{" "}
+                          <span className="text-[#e09f63]">
+                            {searchAddress}
+                          </span>
                         </Typography>
                       </CardContent>
                     </CardActionArea>
