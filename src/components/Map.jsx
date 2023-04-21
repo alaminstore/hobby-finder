@@ -13,7 +13,7 @@ const Map = () => {
   const [isSearchEnable, setIsSearchEnable] = useState(null);
   const [distance, setDistance] = useState(40);
   const [resetAll, setResetAll] = useState(false);
-  const [searchLatLng, setSearchLatLng] = useState(null);
+  const [searchLatLng, setSearchLatLng] = useState({ lat: null, lng: null });
   const [center, setCenter] = useState(null);
 
   useEffect(() => {
@@ -95,10 +95,8 @@ const Map = () => {
         reset={handleReset}
         newSearchLatLng={setSearchLatLng}
       />
-      {hobbyType}
-      {location.latitude && (
+      {location.latitude && center && (
         <div style={{ height: "50vh", width: "50vw" }} className="mt-5">
-          {console.log("hobby:", hobbies)}
           <GoogleMapReact
             bootstrapURLKeys={{
               key: "AIzaSyAsprnJybW_KqoOy7cbmd9qQWx-wSxuKwU&libraries",
@@ -108,15 +106,7 @@ const Map = () => {
               lng: location?.longitude,
             }}
             center={center}
-            // center={{
-            //   lat: 25.168282,
-            //   lng: 55.250286,
-            // }}
-            // center={{
-            //   lat: location?.latitude,
-            //   lng: location?.longitude,
-            // }}
-            defaultZoom={10}
+            defaultZoom={12}
             yesIWantToUseGoogleMapApiInternals
           >
             {hobbies?.map((hobby, index) => (
@@ -153,19 +143,22 @@ const Map = () => {
                 return null;
               }
             })}
-
-            {/* <PushPinIcon color={"secondary"} lat={25.168282} lng={55.250286} /> */}
-            <MyLocationIcon
-              color={"secondary"}
-              lat={25.168282}
-              lng={55.250286}
-            />
-            {/* <MyLocationIcon
-              color={"secondary"}
-              lat={location?.latitude}
-              lng={location?.longitude}
-            /> */}
+            {searchLatLng?.lat ? (
+              <PushPinIcon
+                style={{ color: "#b00904" }}
+                lat={searchLatLng?.lat}
+                lng={searchLatLng?.lng}
+              />
+            ) : (
+              <MyLocationIcon
+                fontSize="large"
+                color={"primary"}
+                lat={location?.latitude}
+                lng={location?.longitude}
+              />
+            )}
           </GoogleMapReact>
+          
         </div>
       )}
     </>
